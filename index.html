@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>House of Pearl Inc | Intellectual Property Consulting &amp; Licensing</title>
+<meta name="description" content="House of Pearl Inc, an independent intellectual property consulting, holding, and licensing company. Incorporated in Wyoming.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cdefs%3E%3CradialGradient id='p' cx='36%25' cy='30%25' r='80%25'%3E%3Cstop offset='0%25' stop-color='%23FFFFFF'/%3E%3Cstop offset='40%25' stop-color='%23F1EDE6'/%3E%3Cstop offset='78%25' stop-color='%23CFC8BC'/%3E%3Cstop offset='100%25' stop-color='%23ABA294'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='30' cy='30' r='26' fill='url(%23p)'/%3E%3Cellipse cx='22' cy='19' rx='9' ry='5.5' fill='%23FFFFFF' opacity='.7'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pearl:#F8F6F2;
+    --ivory:#FDFCFA;
+    --mist:#EEEBE5;
+    --silver:#CFC9BF;
+    --greige:#A89F91;
+    --graphite:#37342F;
+    --graphite-deep:#2B2925;
+    --ink:#45403A;
+    --ink-soft:#8A8277;
+    --hairline:rgba(168,159,145,.35);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Jost',sans-serif;font-weight:300;color:var(--ink);background:var(--ivory);line-height:1.85;font-size:16.5px;letter-spacing:.015em}
+  h1,h2,h3{font-family:'Marcellus',serif;font-weight:400;color:var(--graphite)}
+  a{color:inherit;text-decoration:none}
+  svg{display:block}
+  .container{max-width:1000px;margin:0 auto;padding:0 2rem}
+
+  .pearl-grad{fill:url(#pearlGrad)}
+
+  /* ===== Eyebrow with hairlines ===== */
+  .eyebrow{display:flex;align-items:center;justify-content:center;gap:1.2rem;font-size:.68rem;letter-spacing:.42em;text-transform:uppercase;color:var(--greige);font-weight:400;margin-bottom:1.6rem}
+  .eyebrow::before,.eyebrow::after{content:"";height:1px;width:44px;background:var(--hairline)}
+  .eyebrow.left{justify-content:flex-start}
+  .eyebrow.left::after{display:none}
+
+  /* ===== Nav ===== */
+  header{background:rgba(253,252,250,.94);backdrop-filter:blur(10px);position:sticky;top:0;z-index:50;border-bottom:1px solid var(--mist)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1.35rem 2rem;max-width:1160px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:.8rem;font-family:'Marcellus',serif;font-size:1.28rem;letter-spacing:.14em;color:var(--graphite);text-transform:uppercase}
+  .brand-mark{flex-shrink:0;filter:drop-shadow(0 2px 5px rgba(58,55,51,.18))}
+  nav.links{display:flex;gap:2.6rem;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft)}
+  nav.links a{padding:.3rem 0;border-bottom:1px solid transparent;transition:color .3s,border-color .3s}
+  nav.links a:hover,nav.links a:focus-visible{color:var(--graphite);border-color:var(--silver)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--greige);outline-offset:4px}
+  @media (max-width:700px){nav.links{display:none}}
+
+  /* ===== Hero ===== */
+  .hero{background:linear-gradient(180deg,var(--ivory) 0%,var(--pearl) 100%);padding:9rem 0 10rem;text-align:center;position:relative}
+  .hero::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:1px;height:64px;background:linear-gradient(180deg,transparent,var(--hairline))}
+  .hero .emblem{width:120px;height:120px;margin:0 auto 3rem;filter:drop-shadow(0 18px 40px rgba(58,55,51,.16))}
+  .hero h1{font-size:clamp(2.4rem,6vw,3.9rem);line-height:1.18;max-width:19ch;margin:0 auto;letter-spacing:.015em}
+  .hero p.lead{margin:2.2rem auto 0;max-width:50ch;font-size:1.06rem;font-weight:300;color:var(--ink-soft);line-height:2}
+  .hero .cta{display:inline-block;margin-top:3.4rem;border:1px solid var(--graphite);color:var(--graphite);font-size:.74rem;letter-spacing:.34em;text-transform:uppercase;padding:1.15rem 3.4rem;transition:background .35s,color .35s,letter-spacing .35s}
+  .hero .cta:hover{background:var(--graphite);color:var(--ivory)}
+  @media (prefers-reduced-motion:no-preference){
+    .hero .emblem,.hero .eyebrow,.hero h1,.hero .lead,.hero .cta{opacity:0;transform:translateY(14px);animation:rise 1.1s cubic-bezier(.22,.7,.3,1) forwards}
+    .hero .eyebrow{animation-delay:.15s}
+    .hero h1{animation-delay:.28s}
+    .hero .lead{animation-delay:.42s}
+    .hero .cta{animation-delay:.56s}
+    @keyframes rise{to{opacity:1;transform:none}}
+  }
+
+  /* ===== Sections ===== */
+  section{padding:7.5rem 0}
+  .section-title{font-size:clamp(1.8rem,3.6vw,2.4rem);letter-spacing:.02em}
+
+  /* Purpose */
+  .purpose{background:var(--ivory);text-align:center}
+  .purpose .section-title{margin:0 auto;max-width:24ch}
+  .purpose-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;margin-top:5rem}
+  .purpose-item{padding:0 2.6rem}
+  .purpose-item + .purpose-item{border-left:1px solid var(--mist)}
+  @media (max-width:760px){.purpose-item + .purpose-item{border-left:none;border-top:1px solid var(--mist);padding-top:3rem;margin-top:3rem}}
+  .purpose-item .dot{width:15px;height:15px;margin:0 auto 1.8rem;filter:drop-shadow(0 3px 7px rgba(58,55,51,.2))}
+  .purpose-item h3{font-size:1.05rem;letter-spacing:.24em;text-transform:uppercase;margin-bottom:1rem}
+  .purpose-item p{font-size:.93rem;color:var(--ink-soft);max-width:32ch;margin:0 auto;line-height:1.95}
+
+  /* Services (dark) */
+  .services{background:var(--graphite);color:var(--mist);padding:8.5rem 0}
+  .services .eyebrow{color:var(--greige)}
+  .services .eyebrow::before,.services .eyebrow::after{background:rgba(207,201,191,.25)}
+  .services .section-title{color:var(--pearl);text-align:center;margin:0 auto;max-width:24ch}
+  .svc-list{margin-top:5rem;max-width:760px;margin-left:auto;margin-right:auto}
+  .svc-row{padding:3rem 0;border-top:1px solid rgba(207,201,191,.16);display:grid;grid-template-columns:15px 1fr;gap:2.2rem;align-items:start}
+  .svc-row:last-child{border-bottom:1px solid rgba(207,201,191,.16)}
+  .svc-row .dot{width:15px;height:15px;margin-top:.55rem}
+  .svc-row h3{font-size:1.25rem;color:var(--pearl);margin-bottom:.8rem;letter-spacing:.06em}
+  .svc-row p{font-size:.94rem;color:var(--silver);max-width:58ch;line-height:1.95;font-weight:300}
+
+  /* Contact */
+  .contact{background:var(--pearl);text-align:center}
+  .contact .section-title{margin:0 auto}
+  .contact-inner{max-width:560px;margin:3.4rem auto 0}
+  .contact-info{display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;margin-bottom:3.6rem}
+  .contact-info div{font-size:.95rem;color:var(--ink-soft)}
+  .contact-info strong{color:var(--graphite);display:block;font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;margin-bottom:.45rem;font-weight:400}
+  form{display:grid;gap:1.4rem;text-align:left}
+  .field{display:grid;gap:.5rem}
+  label{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--greige)}
+  input,textarea{font-family:'Jost',sans-serif;font-weight:300;font-size:.98rem;padding:1rem 1.15rem;border:none;border-bottom:1px solid var(--silver);background:transparent;color:var(--ink);transition:border-color .3s}
+  input::placeholder,textarea::placeholder{color:var(--silver)}
+  input:focus,textarea:focus{outline:none;border-bottom-color:var(--graphite)}
+  button{font-family:'Jost',sans-serif;font-weight:400;font-size:.74rem;letter-spacing:.34em;text-transform:uppercase;background:var(--graphite);color:var(--ivory);border:1px solid var(--graphite);padding:1.15rem 3.4rem;cursor:pointer;justify-self:center;margin-top:1.2rem;transition:background .35s,color .35s}
+  button:hover{background:transparent;color:var(--graphite)}
+  .entity-note{margin-top:3.4rem;font-size:.82rem;letter-spacing:.14em;color:var(--greige);text-transform:uppercase}
+
+  /* Footer */
+  footer{background:var(--ivory);border-top:1px solid var(--mist);color:var(--ink-soft);padding:3.2rem 0;font-size:.83rem;text-align:center}
+  .foot{max-width:1000px;margin:0 auto;padding:0 2rem;display:grid;gap:.55rem;justify-items:center}
+  .foot .fmark{width:20px;height:20px;margin-bottom:.8rem;opacity:.85}
+  .foot .legal{margin-top:1rem;font-size:.77rem;color:var(--silver);max-width:66ch;line-height:1.9}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .hero .cta,button,nav.links a,input,textarea{transition:none}
+  }
+</style>
+</head>
+<body id="top">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="pearlGrad" cx="36%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#F1EDE6"/>
+      <stop offset="78%" stop-color="#CFC8BC"/>
+      <stop offset="100%" stop-color="#ABA294"/>
+    </radialGradient>
+  </defs>
+</svg>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" width="27" height="27" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="30" cy="30" r="26" class="pearl-grad"/>
+        <ellipse cx="22" cy="19" rx="9" ry="5.5" fill="#FFFFFF" opacity=".7"/>
+      </svg>
+      <span>House of Pearl</span>
+    </a>
+    <nav class="links" aria-label="Primary">
+      <a href="#purpose">Purpose</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <svg class="emblem" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="30" cy="30" r="26" class="pearl-grad"/>
+      <ellipse cx="22" cy="19" rx="9" ry="5.5" fill="#FFFFFF" opacity=".7"/>
+    </svg>
+    <p class="eyebrow">House of Pearl Inc</p>
+    <h1>Rare things deserve careful keeping.</h1>
+    <p class="lead">An independent intellectual property consulting, holding, and licensing company. We advise on, protect, and license the brands entrusted to us, quietly and for the long term.</p>
+    <a href="#contact" class="cta">Inquire</a>
+  </div>
+</section>
+
+<section id="purpose" class="purpose">
+  <div class="container">
+    <p class="eyebrow">Purpose</p>
+    <h2 class="section-title">What we protect endures</h2>
+    <div class="purpose-grid">
+      <div class="purpose-item">
+        <svg class="dot" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30" cy="30" r="26" class="pearl-grad"/></svg>
+        <h3>Advise</h3>
+        <p>Counsel on brand strategy, protection, and the long view of intellectual property.</p>
+      </div>
+      <div class="purpose-item">
+        <svg class="dot" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30" cy="30" r="26" class="pearl-grad"/></svg>
+        <h3>Hold</h3>
+        <p>Trademarks, brand assets, and intellectual property held under one careful roof.</p>
+      </div>
+      <div class="purpose-item">
+        <svg class="dot" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30" cy="30" r="26" class="pearl-grad"/></svg>
+        <h3>Protect</h3>
+        <p>Registrations maintained, renewals watched, and rights defended before they need defending.</p>
+      </div>
+      <div class="purpose-item">
+        <svg class="dot" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30" cy="30" r="26" class="pearl-grad"/></svg>
+        <h3>License</h3>
+        <p>Brand rights granted through clear, written agreements. Never assumed, never informal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="container">
+    <p class="eyebrow">Services</p>
+    <h2 class="section-title">Stewardship, in practice</h2>
+    <div class="svc-list">
+      <div class="svc-row">
+        <svg class="dot" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30" cy="30" r="26" class="pearl-grad"/></svg>
+        <div>
+          <h3>Intellectual Property Consulting</h3>
+          <p>Advisory on brand protection strategy, trademark selection, portfolio structure, and licensing readiness for businesses building lasting brands.</p>
+        </div>
+      </div>
+      <div class="svc-row">
+        <svg class="dot" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30" cy="30" r="26" class="pearl-grad"/></svg>
+        <div>
+          <h3>IP &amp; Trademark Holding</h3>
+          <p>Centralized ownership of trademarks, trade names, logos, and brand assets, with clean title and organized records.</p>
+        </div>
+      </div>
+      <div class="svc-row">
+        <svg class="dot" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30" cy="30" r="26" class="pearl-grad"/></svg>
+        <div>
+          <h3>Trademark Stewardship</h3>
+          <p>Filing coordination, renewal tracking, and portfolio maintenance so registrations never lapse quietly.</p>
+        </div>
+      </div>
+      <div class="svc-row">
+        <svg class="dot" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30" cy="30" r="26" class="pearl-grad"/></svg>
+        <div>
+          <h3>Brand Licensing</h3>
+          <p>Written license agreements granting rights to use protected marks, with defined terms, territories, and quality standards.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <p class="eyebrow">Contact</p>
+    <h2 class="section-title">Begin an inquiry</h2>
+    <div class="contact-inner">
+      <div class="contact-info">
+        <div><strong>Email</strong> info@houseofpearl.net</div>
+        <div><strong>Phone</strong> Forthcoming</div>
+      </div>
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your full name" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us about your inquiry" required></textarea>
+        </div>
+        <button type="submit">Send inquiry</button>
+      </form>
+      <p class="entity-note">House of Pearl Inc &middot; Incorporated in Wyoming</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <svg class="fmark" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30" cy="30" r="26" class="pearl-grad"/><ellipse cx="22" cy="19" rx="9" ry="5.5" fill="#FFFFFF" opacity=".7"/></svg>
+    <div>&copy; 2026 House of Pearl Inc. All rights reserved. &middot; <a href="terms.html" style="border-bottom:1px solid var(--silver)">Terms of Service</a></div>
+    <div>Incorporated in Wyoming &middot; info@houseofpearl.net</div>
+    <p class="legal">All services are billed in U.S. dollars (USD). Refunds are handled in accordance with the terms of each client's written agreement. Payments are processed securely by Stripe.</p>
+  </div>
+</footer>
+
+</body>
+</html>
